@@ -1,0 +1,371 @@
+openapi: 3.0.0
+info:
+  title: ALTSCHOOL EXAM BY STEPHEN IGNATIUS
+  contact:
+    name: Ignatius Stephen
+    url: https://myportfolio-gz6j.onrender.com/
+    email: stephenignatiusbiz@gmail.com
+  version: '1.0'
+servers:
+- url: https://jolly-dog-culottes.cyclic.app/
+  variables: {}
+paths:
+  /api/v1/users/signup:
+    post:
+      tags:
+      - Auth
+      summary: SIGN UP
+      operationId: SIGNUP
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/SIGNUPREQUEST'
+              - example:
+                  first_name: stephen6
+                  last_name: Ignatius6
+                  email: stephenignatius6@gmail.com
+                  password: mypassword
+                  passwordConfirm: mypassword
+            example:
+              first_name: stephen6
+              last_name: Ignatius6
+              email: stephenignatius6@gmail.com
+              password: mypassword
+              passwordConfirm: mypassword
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /api/v1/users/login:
+    post:
+      tags:
+      - Auth
+      summary: LOGIN
+      operationId: LOGIN
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/LOGINREQUEST'
+              - example:
+                  email: stephenignatius6@gmail.com
+                  password: mypassword
+            example:
+              email: stephenignatius6@gmail.com
+              password: mypassword
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /:
+    get:
+      tags:
+      - Welcome Page
+      summary: WELCOME ROUTE
+      operationId: WELCOMEROUTE
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /api/v1/blogs:
+    get:
+      tags:
+      - Blogs
+      summary: GET ALL BLOGS
+      operationId: GETALLBLOGS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+    post:
+      tags:
+      - Blogs
+      summary: CREATE BLOG
+      operationId: CREATEBLOG
+      parameters: []
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/CREATEBLOGREQUEST'
+              - example:
+                  title: example blog 3.8
+                  description: a short description
+                  tags:
+                  - hello
+                  - story
+                  - test
+                  body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum ornare nisi eget iaculis
+            example:
+              title: example blog 3.8
+              description: a short description
+              tags:
+              - hello
+              - story
+              - test
+              body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum ornare nisi eget iaculis
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+      - bearer: []
+  /api/v1/blogs/{id}:
+    get:
+      tags:
+      - Blogs
+      summary: GET SINGLE BLOG
+      operationId: GETSINGLEBLOG
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+      - bearer: []
+    delete:
+      tags:
+      - Blogs
+      summary: DELETE BLOG
+      operationId: DELETEBLOG
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+      - bearer: []
+    patch:
+      tags:
+      - Blogs
+      summary: UPDATE BLOG
+      operationId: UPDATEBLOG
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      requestBody:
+        description: ''
+        content:
+          application/json:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/UPDATEBLOGREQUEST'
+              - example:
+                  state: published
+                  tags:
+                  - mom
+                  - SIS
+                  body: ahf  consect
+            example:
+              state: published
+              tags:
+              - mom
+              - SIS
+              body: ahf  consect
+        required: true
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+      - bearer: []
+  /api/v1/blogs/getMyBlogs:
+    get:
+      tags:
+      - Blogs
+      summary: GET MY BLOGS
+      operationId: GETMYBLOGS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security:
+      - bearer: []
+  /api/v1/users:
+    get:
+      tags:
+      - Users
+      summary: GET ALL USERS
+      operationId: GETALLUSERS
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+  /api/v1/users/{id}:
+    get:
+      tags:
+      - Users
+      summary: GET SINGLE USER
+      operationId: GETSINGLEUSER
+      parameters:
+      - name: id
+        in: path
+        description: ''
+        required: true
+        style: simple
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+      security: []
+components:
+  schemas:
+    SIGNUPREQUEST:
+      title: SIGNUPREQUEST
+      required:
+      - first_name
+      - last_name
+      - email
+      - password
+      - passwordConfirm
+      type: object
+      properties:
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        passwordConfirm:
+          type: string
+      example:
+        first_name: stephen6
+        last_name: Ignatius6
+        email: stephenignatius6@gmail.com
+        password: mypassword
+        passwordConfirm: mypassword
+    LOGINREQUEST:
+      title: LOGINREQUEST
+      required:
+      - email
+      - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: stephenignatius6@gmail.com
+        password: mypassword
+    CREATEBLOGREQUEST:
+      title: CREATEBLOGREQUEST
+      required:
+      - title
+      - description
+      - tags
+      - body
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+          description: ''
+        body:
+          type: string
+      example:
+        title: example blog 3.8
+        description: a short description
+        tags:
+        - hello
+        - story
+        - test
+        body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut fermentum ornare nisi eget iaculis
+    UPDATEBLOGREQUEST:
+      title: UPDATEBLOGREQUEST
+      required:
+      - state
+      - tags
+      - body
+      type: object
+      properties:
+        state:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+          description: ''
+        body:
+          type: string
+      example:
+        state: published
+        tags:
+        - mom
+        - SIS
+        body: ahf  consect
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+
+- name: Auth
+  description: ''
+- name: Welcome Page
+  description: ''
+- name: Blogs
+  description: ''
+- name: Users
+  description: ''

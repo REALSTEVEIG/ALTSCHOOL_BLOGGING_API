@@ -1,0 +1,34 @@
+{
+  "name": "alt-exam",
+  "version": "1.0.0",
+  "description": "Solution to Altschool second semester exam",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --coverage --runInBand --detectOpenHandles",
+    "start:dev": "nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
+    "start:prod": "NODE_ENV=production node server.js"
+  },
+  "author": "Ignatius Stephen Maduabuchi",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.6.0",
+    "helmet": "^6.0.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.0",
+    "morgan": "^1.10.0",
+    "swagger-ui-express": "^4.5.0",
+    "validator": "^13.7.0",
+    "xss-clean": "^0.1.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "jest": "^29.2.2",
+    "supertest": "^6.3.1"
+  }
+}
