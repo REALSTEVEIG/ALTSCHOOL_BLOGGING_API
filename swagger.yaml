@@ -7,7 +7,7 @@ info:
     email: stephenignatiusbiz@gmail.com
   version: '1.0'
 servers:
-- url: https://jolly-dog-culottes.cyclic.app/
+- url: https://steves-blogging-api.cyclic.app
   variables: {}
 paths:
   /api/v1/users/signup:
@@ -360,7 +360,6 @@ components:
       scheme: bearer
 security: []
 tags:
-
 - name: Auth
   description: ''
 - name: Welcome Page
