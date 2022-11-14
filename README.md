@@ -2,7 +2,7 @@
 
 A Blog App
 ___
-The project passes all the below listed requirements
+This project was carried out by Ignatius Stephen Maduabuchi and it passes all requirements listed  below
 
 You are required to build a blogging api. The general idea here is that the api has a general endpoint that shows a list of articles that have been created by different people, and anybody that calls this endpoint, should be able to read a blog created by them or other users.
 
@@ -31,16 +31,16 @@ You are required to build a blogging api. The general idea here is that the api 
 * Write tests for all endpoints
 ##### Note:
 * The owner of the blog should be logged in to perform actions
-* Use the **MVC** pattern
+* Use the **MVC** pattern.
 ___
 ## Setup
 * Install NodeJS, mongodb
 * pull this repo
 * update config.env with config.env.example
-* run npm run start for production or npm run start:dev for development
+* run npm run start for production or npm run start:dev for development.
 ___
-## Base URL
-https://okikiola-exam-solution.herokuapp.com/api/v1/blogs
+## Base URL to the documentation using swagger-UI
+https://steves-blogging-api.cyclic.app/api-docs
 ___
 
 ## Data Models
@@ -68,8 +68,3 @@ ___
   |tags|array:strings||
   |body|string|required|
   |timestamps|date||
-
-___
-## APIs
-#### Link to postman documentation
-[click here](https://documenter.getpostman.com/view/22751768/2s8YRiJtRW)
