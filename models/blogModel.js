@@ -48,6 +48,9 @@ const blogSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+
+blogSchema.index({ title: "text" });
+
 blogSchema.pre(/^find/, function (next) {
   this.populate({
     path: "author",
