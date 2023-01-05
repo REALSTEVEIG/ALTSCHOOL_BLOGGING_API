@@ -129,7 +129,7 @@ exports.getMyBlogs = catchAsync(async (req, res, next) => {
 
   const blogs = await features.query;
   if (!blogs) return next(new AppError("No blogs found", 404));
-  res.status(200).json({
+  res.status(204).json({
     status: "success",
     results: blogs.length,
     data: {
